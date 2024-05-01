@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados da Reserva</title>
+</head>
+<body>
+    <h1>Dados da Reserva de Transporte</h1>
+    <div>
+        <p><strong>Tipo de Carga:</strong> <span id="cargo"></span></p>
+        <p><strong>Origem:</strong> <span id="origem"></span></p>
+        <p><strong>Destino:</strong> <span id="destino"></span></p>
+        <p><strong>Data de Entrega:</strong> <span id="data"></span></p>
+    </div>
+
+    <div> 
+
+        <button id="voltar">Voltar à Página Inicial</button>
+
+
+    </div>
+
+    <script>
+        // Recuperando os dados do localStorage e exibindo na página
+        document.getElementById("cargo").textContent = localStorage.getItem("cargo");
+        document.getElementById("origem").textContent = localStorage.getItem("origem");
+        document.getElementById("destino").textContent = localStorage.getItem("destino");
+        document.getElementById("data").textContent = localStorage.getItem("data");
+        
+        // Limpando os dados do localStorage após exibir na página
+        localStorage.removeItem("cargo");
+        localStorage.removeItem("origem");
+        localStorage.removeItem("destino");
+        localStorage.removeItem("data");
+
+       
+    document.getElementById("voltar").addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+
+
+    </script>
+</body>
+</html>
